@@ -1,0 +1,52 @@
+﻿Version: '{debug}'
+Title: "Busard General Configuration"
+Language: EN
+DebugMode: false
+
+Notification:
+  FrequencySeconds: 20
+  Notifiers:
+    - Email
+    - Telegram
+    - SqlServerTable
+
+  Email:
+    NotifyOn: [ Information, Warning, Critical ]
+    SmtpServer: smtp.yourcompany.com
+    SmtpPort: 25
+    EmailFrom: busard@yourcompany.com
+    InformationEmailTo: alerts@yourcompany.com
+    WarningEmailTo: alerts@yourcompany.com
+    CriticalEmailTo: alerts@yourcompany.com
+    Subject: "[DB ALERT]"
+
+  Telegram:
+    NotifyOn: [ Critical ]
+    TelegramToken: "secret"
+    InformationChatId: 000000000
+    WarningChatId: 000000000
+    CriticalChatId: 000000000
+
+  SqlServerTable:
+    ServerName: "mysqlserver"
+    UserId: "secret"
+    UserPassword: "secret"
+    TableName: "dbo.BusardNotification"
+
+Watchers:
+  Retries: 6
+  RetryIntervalSeconds: 20
+  TimedWatchersLoopSeconds: 30
+  Modules: [ "SqlServer" ]
+
+  SqlServer:
+    Watchers: [ "Issues", "AlwaysOn", "ErrorLog", "PerformanceCounters" ]
+    ServerName: "mysqlserver"
+    UserId: "secret"
+    UserPassword: "secret"
+    IssuesSessionName: monitoring
+
+Serilog:
+  # Using = [ "Serilog.Sinks.Console", "Serilog.Sinks.Email" ]
+  Using: [ "Serilog.Sinks.Console" ]
+  MinimumLevel: "Debug"

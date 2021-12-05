@@ -1,0 +1,5 @@
+version: '3.4'
+services:
+  busard.watcher:
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro

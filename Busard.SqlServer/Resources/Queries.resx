@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GetAvailabilityGroups" xml:space="preserve">
+    <value>SELECT 
+	g.group_id,
+	g.name,
+	g.failure_condition_level,
+	g.health_check_timeout,
+	g.automated_backup_preference_desc as [automated_backup_preference],
+	gs.primary_recovery_health as [primary_health],
+	gs.primary_replica,
+	gs.secondary_recovery_health as [secondary_health],
+	gs.synchronization_health as [synchronization_health]
+FROM sys.availability_groups g
+JOIN sys.dm_hadr_availability_group_states gs ON g.group_id = gs.group_id</value>
+  </data>
+  <data name="GetDatabasesList" xml:space="preserve">
+    <value>SELECT name
+	                              ,database_id
+	                              ,compatibility_level
+	                              ,collation_name
+	                              ,is_read_only
+	                              ,is_auto_close_on
+	                              ,is_auto_shrink_on
+	                              ,state_desc
+	                              ,recovery_model_desc
+	                              ,is_auto_create_stats_on
+	                              ,is_auto_update_stats_on
+	                              ,log_reuse_wait_desc
+                            FROM sys.databases;</value>
+  </data>
+  <data name="GetDmHadrCluster" xml:space="preserve">
+    <value>SELECT 
+	c.cluster_name,
+	c.quorum_type,
+	c.quorum_state
+FROM sys.dm_hadr_cluster c</value>
+  </data>
+  <data name="GetHadrClusterMembers" xml:space="preserve">
+    <value>SELECT 
+	cm.member_name,
+	cm.member_type,
+	cm.member_state,
+	cm.number_of_quorum_votes
+FROM sys.dm_hadr_cluster_members cm;</value>
+  </data>
+  <data name="GetHadrClusterNodes" xml:space="preserve">
+    <value>SELECT 
+	cn.group_name
+   ,cn.replica_server_name
+   ,cn.node_name,
+	cs.join_state as join_state
+FROM sys.dm_hadr_availability_replica_cluster_nodes cn
+JOIN sys.dm_hadr_availability_replica_cluster_states cs ON cn.replica_server_name = cs.replica_server_name
+ORDER BY cn.group_name;</value>
+  </data>
+  <data name="GetHadrReplica" xml:space="preserve">
+    <value>SELECT 
+	g.name as AG,
+	ar.replica_server_name,
+	ar.availability_mode_desc as [availability_mode],
+	ar.failover_mode_desc as [failover_mode],
+	ar.session_timeout,
+	ar.primary_role_allow_connections_desc as [primary_role_allow_connections],
+	ar.secondary_role_allow_connections_desc as [secondary_role_allow_connections]
+FROM sys.availability_replicas ar
+JOIN sys.availability_groups g ON ar.group_id = g.group_id
+ORDER BY g.name, ar.replica_server_name;</value>
+  </data>
+  <data name="GetServerMetadata" xml:space="preserve">
+    <value>SELECT
+                SERVERPROPERTY('MachineName') AS ComputerName,
+                SERVERPROPERTY('ServerName') AS InstanceName,
+                SERVERPROPERTY('Edition') AS Edition,
+                SERVERPROPERTY('ProductVersion') AS ProductVersion,
+                SERVERPROPERTY('ProductLevel') AS ProductLevel;</value>
+  </data>
+  <data name="GetXpReadErrorlog" xml:space="preserve">
+    <value>EXEC master.dbo.xp_readerrorlog 0, 1, NULL, NULL, '{0}' , NULL, N'asc', NULL</value>
+  </data>
+</root>

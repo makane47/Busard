@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  busard.watcher:
+    image: ${DOCKER_REGISTRY-}busardwatcher
+    build:
+      context: .
+      dockerfile: Busard.Watcher/Dockerfile
+    volumes:
+      - ./Busard.Watcher/config.global.prod.yaml:/conf/config.global.yaml
+      - ./Busard.Watcher/config.secret.prod.yaml:/secrets/config.secret.yaml
