@@ -27,12 +27,12 @@ Any notification target should be easy to add : just implement `Busard.Core.Noti
 
 Busard can be deployed manually in a docker container, or using CI/CD. You can also compile it manually and run it using `dotnet`. It is targeting .NET 6.
 
-A `Dockerfile` can be found in the root folder. I believe it is an easy to understand `Dockerfile` by itself. You can build it using the [`docker image build`](https://docs.docker.com/engine/reference/commandline/image_build/) command.
+A [`Dockerfile`](./Dockerfile) can be found in the root folder. I believe it is easy to understand by itself. You can build it using the [`docker image build`](https://docs.docker.com/engine/reference/commandline/image_build/) command.
 
 you can also find in the root folder a [`docker-compose.yml`](docker-compose.yml) for Docker Compose, to inject the configuration files at the right place in the Docker image.
 
-Configuration files are (in the `Busard.Watcher` project) :
+Configuration files are (in the [`Busard.Watcher`](./Busard.Watcher/) project) :
 
-- `config.global.yaml` -- all the configuration needed, except the secrets : SQL Server connection passwords et Telegram token for instance.
-- `config.secret.yaml` -- the secrets. Useful for handling secrets in Kubernetes.
+- [`config.global.yaml`](./Busard.Watcher/config.global.yaml) — all the configuration needed, except the secrets : SQL Server connection passwords et Telegram token for instance.
+- [`config.secret.yaml`](./Busard.Watcher/config.secret.yaml) — the secrets. Useful for handling secrets in Kubernetes.
   
