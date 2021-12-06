@@ -25,6 +25,8 @@ Any notification target should be easy to add : just implement `Busard.Core.Noti
 
 ## Installation
 
+Clone the repository to get the source : `git clone https://github.com/rudi-bruchez/Busard.git`
+
 Busard can be deployed manually in a docker container, or using CI/CD. You can also compile it manually and run it using `dotnet`. It is targeting .NET 6.
 
 A [`Dockerfile`](./Dockerfile) can be found in the root folder. I believe it is easy to understand by itself. You can build it using the [`docker image build`](https://docs.docker.com/engine/reference/commandline/image_build/) command.
