@@ -35,4 +35,10 @@ Configuration files are (in the [`Busard.Watcher`](./Busard.Watcher/) project) :
 
 - [`config.global.yaml`](./Busard.Watcher/config.global.yaml) — all the configuration needed, except the secrets : SQL Server connection passwords et Telegram token for instance.
 - [`config.secret.yaml`](./Busard.Watcher/config.secret.yaml) — the secrets. Useful for handling secrets in Kubernetes.
+
+### SQL Server configuration
+
+You need to add a login for Busard, example is given here : [01.logins-and-permissions.sql](SqlServer.Scripts/01.logins-and-permissions.sql).
+
+You need to create the issues extended event session, look at [02.xevent.sql](SqlServer.Scripts/02.xevent.sql)
   

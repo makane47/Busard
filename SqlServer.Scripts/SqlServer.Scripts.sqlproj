@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="01.logins-and-permissions.sql" />
+    <None Include="02.xevent.sql" />
     <None Include="99.reference queries\AlwaysOn.sql" />
   </ItemGroup>
 </Project>
