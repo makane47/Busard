@@ -16,8 +16,8 @@ namespace Busard.Core.Monitoring
     {
         protected readonly Core.WatchersConfiguration _config;
 
-        private readonly Timer _timer;
         public Action<ITimedWatcherService> Callback { get; set; }
+        private readonly Timer _timer;
 
         public TimedWatchersConcurrentPriorityQueue(IOptions<GlobalConfiguration> config)
         {
