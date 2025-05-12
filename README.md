@@ -13,6 +13,7 @@ Busard is runinng in a Docker container (or wherever you want), connects to SQL 
 
 Work in progress or possible additions :
 kame git-scm.com
+kame2 git-scm.com
 
 - SQL Server performance counters (class [`Busard.SqlServer.Monitoring.PerformanceCountersWatcher`](./Busard.SqlServer/Monitoring/PerformanceCountersWatcher.cs))
 - you can add other extended event session (class [`Busard.SqlServer.Monitoring.XEventsWatcherBase`](./Busard.SqlServer/Monitoring/XEventsWatcherBase.cs))
