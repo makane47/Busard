@@ -12,7 +12,7 @@ Busard is runinng in a Docker container (or wherever you want), connects to SQL 
 - `ERRORLOG` information. For now, alerts when a certain number of login failed is reached (class [`Busard.SqlServer.Monitoring.ErrorLogWatcher`](./Busard.SqlServer/Monitoring/ErrorLogWatcher.cs))
 
 Work in progress or possible additions :
-
+kame git-scm.com
 
 - SQL Server performance counters (class [`Busard.SqlServer.Monitoring.PerformanceCountersWatcher`](./Busard.SqlServer/Monitoring/PerformanceCountersWatcher.cs))
 - you can add other extended event session (class [`Busard.SqlServer.Monitoring.XEventsWatcherBase`](./Busard.SqlServer/Monitoring/XEventsWatcherBase.cs))
