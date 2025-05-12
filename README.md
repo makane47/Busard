@@ -6,11 +6,13 @@ Busard is runinng in a Docker container (or wherever you want), connects to SQL 
 
 ## For now, it monitors ...
 
+
 - an extended event session, gathering errors and blocked process reports event (class [`Busard.SqlServer.Monitoring.IssuesWatcher`](./Busard.SqlServer/Monitoring/IssuesWatcher.cs))
 - AlwaysOn Availability group status changes (class [`Busard.SqlServer.Monitoring.AlwaysOnWatcher`](./Busard.SqlServer/Monitoring/AlwaysOnWatcher.cs))
 - `ERRORLOG` information. For now, alerts when a certain number of login failed is reached (class [`Busard.SqlServer.Monitoring.ErrorLogWatcher`](./Busard.SqlServer/Monitoring/ErrorLogWatcher.cs))
 
 Work in progress or possible additions :
+
 
 - SQL Server performance counters (class [`Busard.SqlServer.Monitoring.PerformanceCountersWatcher`](./Busard.SqlServer/Monitoring/PerformanceCountersWatcher.cs))
 - you can add other extended event session (class [`Busard.SqlServer.Monitoring.XEventsWatcherBase`](./Busard.SqlServer/Monitoring/XEventsWatcherBase.cs))
