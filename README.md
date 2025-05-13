@@ -18,6 +18,7 @@ kame3 git-scm.com
 
 bkane1 de bkane
 bkane2 de bkane
+---- wane1  -----
 
 
 - SQL Server performance counters (class [`Busard.SqlServer.Monitoring.PerformanceCountersWatcher`](./Busard.SqlServer/Monitoring/PerformanceCountersWatcher.cs))
@@ -26,7 +27,8 @@ bkane2 de bkane
 ## For now, it sends alerts to ...
 
 - email (class [`Busard.Core.Notification.EmailNotifier`](./Busard.Core/Notification/EmailNotifier.cs))
-- Telegram (class [`Busard.Core.Notification.TelegramNotifier`](./Busard.Core/Notification/TelegramNotifier.cs))
+- Telegram (class [`Busard.Core.Notification.TelegramNotifier`](./Busard.Core/Notification/TelegramNotifier.cs))gs
+- 
 - a SQL Server table (class [`Busard.Core.Notification.SqlServerTableNotifier`](./Busard.Core/Notification/SqlServerTableNotifier.cs))
 
 Any notification target should be easy to add : just implement `Busard.Core.Notification.NotifierBase`, send a pull request and I'll add it to Busard ;), or ask for it. It will be hepful to have WhatsApp, Signal, Slack and Teams notification.
