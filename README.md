@@ -19,6 +19,7 @@ kame3 git-scm.com
 bkane1 de bkane
 bkane2 de bkane
 ---- wane1  -----
+---- wane2  -----
 
 
 - SQL Server performance counters (class [`Busard.SqlServer.Monitoring.PerformanceCountersWatcher`](./Busard.SqlServer/Monitoring/PerformanceCountersWatcher.cs))
