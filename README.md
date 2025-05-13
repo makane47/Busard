@@ -18,6 +18,7 @@ kame3 git-scm.com
 
 bkane1 de bkane
 
+
 - SQL Server performance counters (class [`Busard.SqlServer.Monitoring.PerformanceCountersWatcher`](./Busard.SqlServer/Monitoring/PerformanceCountersWatcher.cs))
 - you can add other extended event session (class [`Busard.SqlServer.Monitoring.XEventsWatcherBase`](./Busard.SqlServer/Monitoring/XEventsWatcherBase.cs))
 
